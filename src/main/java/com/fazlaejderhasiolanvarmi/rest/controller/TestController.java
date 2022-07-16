@@ -19,6 +19,7 @@ public class TestController {
             return new ResponseEntity("Latifi Çok Kaza Yapıyo", HttpStatus.PAYMENT_REQUIRED);
         }
 
+        System.out.println("Yeto artık yeto");
         return ResponseEntity.badRequest().body("Bunlar Tırt");
     }
 
