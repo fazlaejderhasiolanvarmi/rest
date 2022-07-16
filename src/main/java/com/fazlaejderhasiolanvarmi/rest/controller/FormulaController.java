@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/formula")
-public class TestController {
+public class FormulaController {
     //formula/driver?name=
     @GetMapping("/drivers")
-    public ResponseEntity<?> getPilot(@RequestParam String name){
+    public ResponseEntity<?> getPilot(@RequestParam(defaultValue = "latifi") String name){
 
         if(name.equals("charles")){
             return ResponseEntity.ok().body("2022 World Champion!!");
