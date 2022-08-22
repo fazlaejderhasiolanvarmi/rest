@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "driver")
+@Table(schema = "formula", name = "drivers")
 public class Driver{
 
     @Id
@@ -23,11 +23,19 @@ public class Driver{
     @Column
     private String lastName;
 
-    public Driver(UUID id, int number, String firstName, String lastName) {
+    @Column
+    private String codeName;
+
+    @Column
+    private String nationality;
+
+    public Driver(UUID id, int number, String firstName, String lastName, String codeName, String nationality) {
         this.id = id;
         this.number = number;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.codeName = codeName;
+        this.nationality = nationality;
     }
 
     public UUID getId() {
@@ -62,4 +70,19 @@ public class Driver{
         this.lastName = lastName;
     }
 
+    public String getCodeName() {
+        return codeName;
+    }
+
+    public void setCodeName(String codeName) {
+        this.codeName = codeName;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
 }
